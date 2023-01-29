@@ -23,7 +23,7 @@ for i in range(len(new_price)):
     num = float(new_price[i])
     win = num * 40 / 100 + num
     win1 = num * 40 / 100
-    profit = profit + win1
+    profit += win1
     price_profit.append(f"{win:.2f}")
 result = ' '.join(str(i) for i in price_profit)
 print(result)

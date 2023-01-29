@@ -1,8 +1,8 @@
 purchases = input().split("|")
-budget = int(input())
-total = 0
-all_prices = 0
-price = 0
+budget = float(input())
+total = 0.0
+all_prices = 0.0
+price = 0.0
 items = []
 
 for i in purchases:
