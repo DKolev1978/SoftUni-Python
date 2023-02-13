@@ -1,17 +1,23 @@
-# numbers = [1, 2, 3, 4]
-# print(numbers)
-#
-# numbers.remove(numbers[0])
-# print(numbers)
-#
+# # numbers = [1, 2, 3, 4]
+# # print(numbers)
+# #
+# # numbers.remove(numbers[0])
+# # print(numbers)
+# #
 zoo = ["cat", "dog", "parrot"]
-#
-# for idx in range(len(zoo)):
-#     print(idx, zoo[idx])
-#
+# #
+# # for idx in range(len(zoo)):
+# #     print(idx, zoo[idx])
+# #
 while zoo:
-
     print(zoo)
     new_zoo = zoo[0]
     zoo.remove(new_zoo)
-print(zoo)
+# print(zoo)
+
+
+# def say_hello(name):
+#     print(f"Hello, {name}")
+#
+#
+# say_hello("Test1")
