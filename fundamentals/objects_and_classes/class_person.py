@@ -5,5 +5,5 @@ class Person:
         self.age = age
 
 
-person = Person("Dimitar", "Kolev", 44)
+person = Person("Diana", "Dimitrova", 44)
 print(person.first_name, person.last_name, person.age)
