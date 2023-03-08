@@ -1,4 +1,4 @@
-recources = {}
+resources = {}
 
 while True:
     resource = input()
@@ -6,11 +6,11 @@ while True:
         break
 
     quantity = int(input())
-    if resource in recources:
-        recources[resource] += quantity
+    if resource in resources:
+        resources[resource] += quantity
     else:
-        recources[resource] = quantity
+        resources[resource] = quantity
 
-for input_line, quantity in recources.items():
+for input_line, quantity in resources.items():
     print(f"{input_line} -> {quantity}")
 
