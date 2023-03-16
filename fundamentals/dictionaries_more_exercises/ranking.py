@@ -35,8 +35,8 @@ while True:
 for key, value in contest_users.items():
     if value and username in value.keys():
         sum_points += value[username]
-        best_students =
-print(sum_points)
+        best_students = {username: sum_points}
+print(best_students)
 
 
 print(contest_users)
