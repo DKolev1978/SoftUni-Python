@@ -10,5 +10,5 @@ for _ in range(number_rows):
 
 for student_name, grade in grades_by_student.items():
     average_grade = sum(grades_by_student[student_name]) / len(grades_by_student[student_name])
-    if  average_grade >= 4.50:
+    if average_grade >= 4.50:
         print(f"{student_name} -> {average_grade:.2f}")
