@@ -42,3 +42,4 @@ for key in sorted(submissions):
     cur_dict = submissions[key].copy()
     for second_key, second_value in sorted(cur_dict.items(), key=lambda x: (-x[1], x[0])):
         print(f"#  {second_key} -> {second_value}")
+
