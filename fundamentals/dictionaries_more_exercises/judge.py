@@ -1,7 +1,7 @@
 contests_by_user_points = {}
 users_contests_points = {}
 user_input = input()
-
+n = 1
 while user_input != "no more time":
     username, contest, points = user_input.split(" -> ")
     points = int(points)
