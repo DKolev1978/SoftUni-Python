@@ -9,12 +9,11 @@ deleting = []
 demons = {}
 demon_names = re.findall(demon_regex, text)
 
-
 for dm in demon_names:
     damage = 0
     demon_health = 0
     demons[dm] = {}
-    demons_damage = re.findall(damage_regex, text)
+    demons_damage = re.findall(damage_regex, dm)
     for ch in dm:
         if ch.isdigit():
             continue
