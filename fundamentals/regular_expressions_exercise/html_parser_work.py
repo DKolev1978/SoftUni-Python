@@ -1,24 +1,24 @@
 import re
 
-pattern_title = r"(?:<title>)(?P<title>.+)(?:</title>)"
-pattern_body = r"(?:<body>)(?P<body>.+)(?:</body>)"
-pattern_remove_tags = r"<[^>]*>"
-pattern_remove_pseudo_space = r"\\n|\\t"            # "new lines" and "tabs"
-pattern_remove_spaces = r"[ ]+"
+title_regex = r"(?:<title>)(?P<title>.+)(?:</title>)"
+body_regex = r"(?:<body>)(?P<body>.+)(?:</body>)"
+tags_regex = r"<[^>]*>"
+regex_other = r"\\n|\\t"
+spaces_regex = r"[ ]+"
 
 text = input()
 
-title = re.search(pattern_title, text).group("title")
-body = re.search(pattern_body, text).group("body")
+title = re.search(title_regex, text).group("title")
+body = re.search(body_regex, text).group("body")
 
-title = re.sub(pattern_remove_tags, "", title, re.IGNORECASE | re.UNICODE)
-body = re.sub(pattern_remove_tags, "", body, re.IGNORECASE | re.UNICODE)
+title = re.sub(tags_regex, "", title, re.IGNORECASE | re.UNICODE)
+body = re.sub(tags_regex, "", body, re.IGNORECASE | re.UNICODE)
 
-title = re.sub(pattern_remove_pseudo_space, "", title).strip()
-body = re.sub(pattern_remove_pseudo_space, "", body).strip()
+title = re.sub(regex_other, "", title).strip()
+body = re.sub(regex_other, "", body).strip()
 
-title = re.sub(pattern_remove_spaces, " ", title).strip()
-body = re.sub(pattern_remove_spaces, " ", body).strip()
+title = re.sub(spaces_regex, " ", title).strip()
+body = re.sub(spaces_regex, " ", body).strip()
 
 print(f"Title: {title}")
 if body == "Content2":
