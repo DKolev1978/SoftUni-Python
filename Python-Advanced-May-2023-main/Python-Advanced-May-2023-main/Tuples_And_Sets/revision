@@ -1,0 +1,6 @@
+# intersection -> сечение, union -> обединение
+# Изразяват се с вен диаграми
+# intersection A ∩ B, means everything thats in A and B at the same time.
+# difference A - B, means everything that is in A and not in B or the intersection.
+# union A ∪ B, means everything.
+# symmetric difference, everything without the intersection
