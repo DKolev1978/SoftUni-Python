@@ -1,6 +1,9 @@
 matrix = []
 position = []
 targets_position = []
+targets_hit_positions = []
+targets_hit = 0
+targets = 0
 
 directions = {
     'up': (-1, 0),
@@ -17,7 +20,7 @@ for r in range(5):
 
     if 'x' in matrix[r]:
         targets_position = [r, matrix[r].index('x')]
-
+        targets += matrix[r].count('x')
 
 commands_count = int(input())
 
@@ -27,14 +30,25 @@ for _ in range(commands_count):
     if "shoot" in com:
         direction = com[1]
 
-        for direction, positions in directions.items():
-            row, col = [
-                bunny_pos[0] + positions[0],
-                bunny_pos[1] + positions[1]
-            ]
-            path = []
-            collected_eggs = 0
+        r = position[0] + directions[direction][0]
+        c = position[1] + directions[direction][1]
 
+        while 0 <= r < 5 and 0 <= c < 5:
+            if matrix[r][c] == 'x':
+                matrix[r][c] = '.'
+                target_down_pos = [r, c]
+            r += directions[direction][0]
+            c += directions[direction][1]
 
+        if target_down_pos:
+            targets_hit_positions.append(target_down_pos)
+            targets_hit += 1
 
-print(*matrix, sep="\n")
+        if targets_hit == targets:
+            print(f'Training completed! All {targets} targets hit.')
+            break
+
+if targets_hit < targets:
+    print(f'Training not completed! {targets - targets_hit} targets left.')  # принтираме неуспешно завършено обучение
+
+print(*targets_hit_positions, sep="\n")
