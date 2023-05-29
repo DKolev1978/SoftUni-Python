@@ -9,3 +9,11 @@
 [Multidimensional Lists](https://forms.gle/JsLPR87KNM5qPEQw9)
 
 ---
+
+[Functions](https://forms.gle/haYJDbAnHNdECsMCA)
+
+---
+
+[Error Handling](https://forms.gle/dyo6atn6NABtbYP78)
+
+---
