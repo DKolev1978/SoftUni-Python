@@ -8,8 +8,8 @@ import tkinter as tk
 from io import BytesIO
 from PIL import Image, ImageTk
 
-
-openai.api_key = "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"
+file = open("openai.txt")
+openai.api_key = file.readline()
 
 
 def display_image(image_url):
