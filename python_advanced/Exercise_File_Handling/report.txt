@@ -1,0 +1,12 @@
+pdf
+---06-File-Handling-Exercise.pdf
+py
+---directory_traversal.py
+---even_lines.py
+---file_manipulator.py
+---line_numbers.py
+txt
+---output.txt
+---report.txt
+---text.txt
+---text2.txt
