@@ -1,16 +1,16 @@
 import os
 
 
-def saved_extensions(dir_name, first_level = False):
+def saved_extensions(dir_name, first_level=False):
     for filename in os.listdir(dir_name):
         file = os.path.join(dir_name, filename)
 
         if os.path.isfile(file):
-            extension = filename.split(".")[-1]
-            if extension not in extensions:
-                extensions[extension] = []
+            ext = filename.split(".")[-1]
+            if ext not in extensions:
+                extensions[ext] = []
 
-            extensions[extension].append(filename)
+            extensions[ext].append(filename)
         elif os.path.isdir(file) and not first_level:
             saved_extensions(file, first_level=True)
 
@@ -25,7 +25,7 @@ try:
 except FileNotFoundError:
     print("Not a valid directory")
 
-extensions = sorted(extensions.items(),key=lambda x: x[0])
+extensions = sorted(extensions.items(), key=lambda x: x[0])
 
 for extension, files in extensions:
     result.append(f".{extension}")
