@@ -1,0 +1,2 @@
+text = int(input())
+
