@@ -21,3 +21,11 @@
 [File Handling](https://forms.gle/pCUenTprakSy2x16A)
 
 ---
+
+[Modules](https://forms.gle/zgvxbwpD7DJqiBFSA)
+
+---
+
+[Final Test](https://forms.gle/sQJ9dqVw1sn6aEBU6)
+
+---
