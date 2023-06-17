@@ -7,8 +7,8 @@ deposits = {
 }
 
 directions = {
-    "up": lambda r, c: [(r - 1 % SIZE), c],
-    "down": lambda r, c: [(r + 1 % SIZE), c],
+    "up": lambda r, c: [(r - 1) % SIZE, c],
+    "down": lambda r, c: [(r + 1) % SIZE, c],
     "left": lambda r, c: [r, (c - 1) % SIZE],
     "right": lambda r, c: [r, (c + 1) % SIZE],
 }
