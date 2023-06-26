@@ -1,11 +1,3 @@
-rows, columns = [int(x) for x in input().split(",")]
-
-matrix = []
-mouse_position = []
-cheese = 0
-no_cheese = []
-
-
 def is_index_valid(r, c):
     if 0 <= r < rows and 0 <= c < columns:
         return True
@@ -18,12 +10,27 @@ def print_matrix():
         print(''.join(map(str, row)))
 
 
+def mouse_movement(matrix_mouse):
+    global matrix, mouse_position, curren_position
+    matrix_mouse[mouse_position[0]][mouse_position[1]] = '*'
+    matrix_mouse[curren_position[0]][curren_position[1]] = "M"
+    mouse_position = curren_position
+    return matrix_mouse, mouse_position, curren_position
+
+
 directions = {
     'up': (-1, 0),
     'down': (1, 0),
     'left': (0, -1),
     'right': (0, 1),
 }
+
+rows, columns = [int(x) for x in input().split(",")]
+
+matrix = []
+mouse_position = []
+cheese = 0
+no_cheese = []
 
 for row in range(rows):
     r = [c for c in input()]
@@ -53,23 +60,17 @@ while True:
             continue
 
         if position == "*":
-            matrix[mouse_position[0]][mouse_position[1]] = '*'
-            matrix[curren_position[0]][curren_position[1]] = "M"
-            mouse_position = curren_position
+            mouse_movement(matrix)
             continue
         elif position == "C":
-            matrix[mouse_position[0]][mouse_position[1]] = '*'
-            matrix[curren_position[0]][curren_position[1]] = "M"
-            mouse_position = curren_position
+            mouse_movement(matrix)
             cheese -= 1
             if cheese == 0:
                 print("Happy mouse! All the cheese is eaten, good night!")
                 print_matrix()
                 raise SystemExit
         elif position == "T":
-            matrix[mouse_position[0]][mouse_position[1]] = '*'
-            matrix[curren_position[0]][curren_position[1]] = "M"
-            mouse_position = curren_position
+            mouse_movement(matrix)
             print("Mouse is trapped!")
             print_matrix()
             break
