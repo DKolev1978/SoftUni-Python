@@ -3,6 +3,7 @@ from collections import deque
 from colorama import Fore
 from os import system
 
+
 def print_board():
     [print(f'{", ".join(row)}') for row in board]
 

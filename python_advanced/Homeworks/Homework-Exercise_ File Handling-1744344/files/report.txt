@@ -1,0 +1,15 @@
+gitignore
+- - -.gitignore
+iml
+- - -Homework-Exercise_ File Handling-1744344.iml
+py
+- - -directory_traversal.py
+- - -even_lines.py
+- - -file_manipulator.py
+- - -line_numbers.py
+txt
+- - -text.txt
+xml
+- - -misc.xml
+- - -modules.xml
+- - -vcs.xml
