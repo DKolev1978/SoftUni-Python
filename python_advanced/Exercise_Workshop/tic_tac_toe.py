@@ -1,7 +1,7 @@
-import speech_recognition as sr
+# import speech_recognition as sr
 
 from collections import deque
-from pyfiglet import Figlet
+# from pyfiglet import Figlet
 
 
 def check_for_win():
@@ -53,8 +53,8 @@ def chose_position():
 
 
 def start():
-    figlet = Figlet(font="big")
-    print(figlet.renderText("Tic-Tac-Toe"))
+    # figlet = Figlet(font="big")
+    # print(figlet.renderText("Tic-Tac-Toe"))
 
     player_one_name = input("Player one, please enter your name: ")
     player_two_name = input("Player two, please enter your name: ")

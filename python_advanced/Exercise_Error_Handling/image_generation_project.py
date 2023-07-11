@@ -8,7 +8,11 @@ import tkinter as tk
 from io import BytesIO
 from PIL import Image, ImageTk
 
+<<<<<<< Updated upstream
 file = open("openai.txt")
+=======
+file = open("openai.txt", "r")
+>>>>>>> Stashed changes
 openai.api_key = file.readline()
 
 
