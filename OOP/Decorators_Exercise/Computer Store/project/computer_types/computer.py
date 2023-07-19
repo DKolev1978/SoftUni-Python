@@ -1,14 +1,20 @@
 from abc import ABC, abstractmethod
-from math import log2, ceil, floor
+from math import log2
 
 
 class Computer(ABC):
+
     def __init__(self, manufacturer: str, model: str):
         self.manufacturer = manufacturer
         self.model = model
         self.processor = None
         self.ram = None
         self.price = 0
+
+    @property
+    @abstractmethod
+    def type(self):
+        ...
 
     @property
     @abstractmethod
@@ -24,11 +30,6 @@ class Computer(ABC):
     def manufacturer(self):
         return self.__manufacturer
 
-    @property
-    @abstractmethod
-    def type(self):
-        ...
-
     @manufacturer.setter
     def manufacturer(self, value):
         if value.strip() == '':
@@ -43,14 +44,14 @@ class Computer(ABC):
     @model.setter
     def model(self, value):
         if value.strip() == '':
-            raise value("Model name cannot be empty.")
+            raise ValueError("Model name cannot be empty.")
 
         self.__model = value
 
     @staticmethod
     def power_of_two(ram: int):
         result = log2(ram)
-        return ceil(result == floor(result))
+        return result.is_integer()
 
     def configure_computer(self, processor: str, ram: int):
         if processor not in self.available_processors:
@@ -63,11 +64,11 @@ class Computer(ABC):
 
         return f"Created {self.__repr__()} for {self.price}$."
 
-    def set_parts(self, processor, ram):
+    def set_parts(self, processor: str, ram: int):
         self.processor = processor
         self.ram = ram
         self.price += self.available_processors[processor]
-        self.price += int(log2(ram) * 100)
+        self.price += int(log2(ram)) * 100
 
     def __repr__(self):
         return f"{self.manufacturer} {self.model} with {self.processor} and {self.ram}GB RAM"
