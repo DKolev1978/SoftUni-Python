@@ -1,6 +1,6 @@
 class PizzaDelivery:
-    def __init__(self, name, price, ingredients, ordered=False):
-        self.ordered = ordered
+    def __init__(self, name, price, ingredients):
+        self.ordered = False
         self.name = name
         self.price = price
         self.ingredients = ingredients
