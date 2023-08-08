@@ -57,4 +57,3 @@ else:
 print("Your path:")
 for el in player_path:
     print(el)
-# [print(step) for step in player_path]
