@@ -2,6 +2,7 @@ size = [int(x) for x in input().split(", ")]
 rows, columns = size[0], size[1]
 
 matrix = []
+collected_items = []
 santa_position = []
 
 directions = {
@@ -26,7 +27,8 @@ while commands:
 
     steps = int(commands[1])
 
-    print(command, steps)
+    row = santa_position[0] + directions[commands][0]
+    col = santa_position[1] + directions[commands][1]
     commands = input().split("-")
 
 print(*matrix, sep="\n")
