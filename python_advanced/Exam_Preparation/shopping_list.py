@@ -5,9 +5,19 @@ def shopping_list(number: int, **shop_list):
         return "You do not have enough budget."
 
     for key, val in shop_list.items():
-        if bay_product > 5 or not shop_list:
-            break
-        if 
+        for v in val:
+            if budget < 0:
+                break
+            if bay_product > 5 or not shop_list:
+                break
+            price, quantity = val
+            if price * quantity > budget:
+                continue
+
+            price_per_product = price * quantity
+            budget -= price_per_product
+            return f"You bought {key} for {price_per_product} leva."
+
 
 
 
