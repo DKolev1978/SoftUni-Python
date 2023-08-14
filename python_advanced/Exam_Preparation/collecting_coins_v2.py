@@ -22,6 +22,7 @@ for row_index in range(n):
     matrix.append(row_data)
 is_winner = True
 player_path = []
+
 player_path.append(player_position)
 coins = 0
 

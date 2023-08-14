@@ -48,3 +48,5 @@ class SecondHandCar:
         return f"""Model {self.model} | Type {self.car_type} | Milage {self.mileage}km
 Current price: {self.price:.2f} | Number of Repairs: {len(self.repairs)}"""
 
+second_hand_car = SecondHandCar("Opel", "Astra", 1000, 1000)
+print(second_hand_car)

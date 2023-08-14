@@ -8,4 +8,4 @@ class BaseLoan(ABC):
 
     @abstractmethod
     def increase_interest_rate(self):
-        pass
+        ...
