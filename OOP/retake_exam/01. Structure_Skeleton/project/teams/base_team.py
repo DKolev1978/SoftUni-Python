@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 
 class BaseTeam(ABC):
-    VALID_EQUIPMENT_TYPES_PRICES = {"KneePad": 15, "ElbowPad": 25}
+
     def __init__(self, name: str, country: str, advantage: int, budget: float):
         self.name = name
         self.country = country
@@ -53,8 +53,6 @@ class BaseTeam(ABC):
                 total_price_of_team_equipment += 15
             else:
                 total_price_of_team_equipment += 25
-
-
 
         return f"Name: {self.name}\n" \
                f"Country: {self.country}\n" \
