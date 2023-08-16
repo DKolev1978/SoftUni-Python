@@ -2,11 +2,9 @@ from project.equipment.base_equipment import BaseEquipment
 
 
 class ElbowPad(BaseEquipment):
-    PRICE = 25.0
 
-    def __init__(self, protection):
-        super().__init__(protection, self.PRICE)
+    def __init__(self, protection=90, price=25.0):
+        super().__init__(protection, price)
 
-    @staticmethod
-    def increase_price():
-        ElbowPad.PRICE += ElbowPad.PRICE * 0.1
+    def increase_price(self):
+        self.price += self.price * 0.1
