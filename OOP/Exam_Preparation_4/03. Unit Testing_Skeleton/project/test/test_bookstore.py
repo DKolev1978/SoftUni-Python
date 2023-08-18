@@ -15,6 +15,17 @@ class TestBookstore(TestCase):
 
         self.assertEqual(str(ve.exception), f"Books limit of -1 is not valid")
 
+    def test_books_limit_setter_works_correctly(self):
+        bookstore = Bookstore(11)
+        self.assertEqual(bookstore.books_limit, 11)
+
+    def test_len_works_correctly(self):
+        bookstore = Bookstore(11)
+        bookstore.availability_in_store_by_book_titles["Test1"] = 1
+        bookstore.availability_in_store_by_book_titles["Test2"] = 3
+        result = bookstore.__len__()
+        self.assertEqual(result, 4)
+
 
 if __name__ == "__main__":
     main()
