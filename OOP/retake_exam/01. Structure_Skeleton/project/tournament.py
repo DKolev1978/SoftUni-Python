@@ -60,6 +60,8 @@ class Tournament:
 
     def _get_equipment(self, equipment_type):
         cur_eq = [eq for eq in self.equipment if eq.__class__.__name__ == equipment_type]
+        print(cur_eq, "Fuck you")
+        print(cur_eq[0], "Fuck you")
         return cur_eq[0] if cur_eq else None
 
     def sell_equipment(self, equipment_type: str, team_name: str):
@@ -72,7 +74,7 @@ class Tournament:
         current_team.budget -= equipment_type_price
         self.equipment.remove(cur_eq)
         current_team.equipment.append(cur_eq)
-        print(equipment_type_price, "Fuck you")
+
         return f"Successfully sold {equipment_type} to {team_name}."
 
     def remove_team(self, team_name: str):
@@ -85,9 +87,7 @@ class Tournament:
         return f"Successfully removed {team_for_removal.name}."
 
     def increase_equipment_price(self, equipment_type: str):
-        pass
-        # equipment_to_raise_prices = self._get_equipment(equipment_type)
-        # print(equipment_to_raise_prices.price)
+
         # equipment_to_raise_prices.increase_price()
         # for el in self.equipment:
         #     equipment_count = 0

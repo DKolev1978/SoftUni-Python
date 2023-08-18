@@ -5,7 +5,6 @@ class IndoorTeam(BaseTeam):
 
     def __init__(self, name: str, country: str, advantage: int, budget: float = 500.0):
         super().__init__(name, country, advantage, budget)
-        # self.equipment: list = []
 
     def win(self):
         self.advantage += 145
