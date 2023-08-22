@@ -11,8 +11,8 @@ class Tournament:
     def __init__(self, name: str, capacity: int):
         self.name = name
         self.capacity = capacity
-        self.equipment: list = []
-        self.teams: list = []
+        self.equipment = []
+        self.teams = []
 
     @property
     def name(self):
@@ -22,7 +22,6 @@ class Tournament:
     def name(self, value):
         if not value.isalnum():
             raise ValueError("Tournament name should contain letters and digits only!")
-
         self.__name = value
 
     def add_equipment(self, equipment_type: str):
@@ -96,26 +95,3 @@ Teams:"""]
     def _find_team_by_name(self, team_name):
         collection = [t for t in self.teams if t.name == team_name]
         return collection[0] if collection else None
-
-
-t = Tournament('SoftUniada2023', 2)
-
-print(t.add_equipment('KneePad'))
-print(t.add_equipment('ElbowPad'))
-
-print(t.add_team('OutdoorTeam', 'Levski', 'BG', 250))
-
-print(t.add_team('OutdoorTeam', 'Spartak', 'BG', 250))
-print(t.add_team('IndoorTeam', 'Dobrich', 'BG', 280))
-
-print(t.sell_equipment('KneePad', 'Spartak'))
-
-print(t.remove_team('Levski'))
-print(t.add_team('OutdoorTeam', 'Lokomotiv', 'BG', 250))
-
-print(t.increase_equipment_price('ElbowPad'))
-print(t.increase_equipment_price('KneePad'))
-
-print(t.play('Lokomotiv', 'Spartak'))
-
-print(t.get_statistics())

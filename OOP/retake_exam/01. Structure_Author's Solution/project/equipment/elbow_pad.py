@@ -11,4 +11,3 @@ class ElbowPad(BaseEquipment):
 
     def increase_price(self):
         self.price *= 1.1
-

@@ -7,8 +7,8 @@ class BaseTeam(ABC):
         self.country = country
         self.advantage = advantage
         self.budget = budget
-        self.wins: int = 0
-        self.equipment: list = []
+        self.wins = 0
+        self.equipment = []
 
     @property
     def name(self):
@@ -42,7 +42,7 @@ class BaseTeam(ABC):
 
     @abstractmethod
     def win(self):
-        ...
+        pass
 
     def get_statistics(self):
         total_equipment_price = sum([eq.price for eq in self.equipment])
